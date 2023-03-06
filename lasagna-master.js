@@ -28,3 +28,24 @@ export function preparationTime(layers, time) {
         return layers.length * 2;
     }
 }
+
+export function quantities(layers) {
+    let noodles = 0;
+    let sauce = 0;
+    for (let layer in layers) {
+        switch (layers[layer]) {
+            case "noodles":
+                noodles += 50;
+                break;
+            case "sauce":
+                sauce += 0.2;
+                break;
+            default:
+                break;
+        }
+    }
+    return {
+        "noodles": noodles,
+        "sauce": sauce
+    }
+}
